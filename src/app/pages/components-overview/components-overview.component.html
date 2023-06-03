@@ -1,0 +1,22 @@
+<div class="w-full h-full">
+  <div class="flex h-full w-full p-8">
+    <div class="flex h-full w-full overflow-y-scroll">
+      <div class="py-8">
+        <div class="prose">
+          <h3>Simple Text</h3>
+          <p>
+            Check the devtools console to see the constructed query and the
+            result. The following shows a simple text search. When clicking
+            "submit" a query is constructed.
+          </p>
+        </div>
+        <div class="py-3 w-80">
+          <app-simple-text [list]="stylesList"></app-simple-text>
+        </div>
+      </div>
+    </div>
+    <div class="flex h-full w-full overflow-y-scroll pb-8" *ngIf="stylesList">
+      <app-simple-table [list]="stylesList"></app-simple-table>
+    </div>
+  </div>
+</div>
