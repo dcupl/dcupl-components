@@ -1,6 +1,6 @@
 <div class="w-full h-full">
-  <div class="flex h-full w-full p-8">
-    <div class="flex h-full w-full overflow-y-scroll">
+  <div class="flex h-full w-full p-8" *ngIf="stylesList">
+    <div class="flex flex-col h-full w-full overflow-y-scroll">
       <div class="py-8">
         <div class="prose">
           <h3>Simple Text</h3>
@@ -14,8 +14,21 @@
           <app-simple-text [list]="stylesList"></app-simple-text>
         </div>
       </div>
+
+      <div class="py-8">
+        <div class="prose">
+          <h3>Simple Facets</h3>
+          <p>
+            The following calculates and lists facets. When clicking an item the
+            query will be applied.
+          </p>
+        </div>
+        <div class="py-3 w-80">
+          <app-simple-facets [list]="stylesList"></app-simple-facets>
+        </div>
+      </div>
     </div>
-    <div class="flex h-full w-full overflow-y-scroll pb-8" *ngIf="stylesList">
+    <div class="flex h-full w-full overflow-y-scroll pb-8">
       <app-simple-table [list]="stylesList"></app-simple-table>
     </div>
   </div>

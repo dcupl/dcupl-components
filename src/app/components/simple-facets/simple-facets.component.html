@@ -1,0 +1,32 @@
+<div
+  class="w-full max-h-60 overflow-scroll p-3 border border-gray-200 rounded-md"
+>
+  <fieldset>
+    <legend class="text-base font-semibold leading-6 text-gray-900">
+      Article Types ({{ items.length }})
+    </legend>
+    <div
+      class="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200"
+    >
+      <div class="relative flex items-start py-4" *ngFor="let item of items">
+        <div class="min-w-0 flex-1 text-sm leading-6">
+          <label for="person-1" class="select-none font-medium text-gray-900">
+            <span>
+              {{ item.key }}
+            </span>
+            <span>({{ item.size }})</span>
+          </label>
+        </div>
+        <div class="ml-3 flex h-6 items-center">
+          <input
+            type="checkbox"
+            [checked]="item.selected"
+            [disabled]="!item.enabled"
+            (change)="toggle(item)"
+            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

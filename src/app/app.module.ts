@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SimpleTextComponent } from './components/simple-text/simple-text.component';
 import { ComponentsOverviewComponent } from './pages/components-overview/components-overview.component';
 import { SimpleTableComponent } from './components/simple-table/simple-table.component';
+import { SimpleFacetsComponent } from './components/simple-facets/simple-facets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleTextComponent,
     ComponentsOverviewComponent,
-    SimpleTableComponent
+    SimpleTableComponent,
+    SimpleFacetsComponent
   ],
   imports: [
     BrowserModule,
