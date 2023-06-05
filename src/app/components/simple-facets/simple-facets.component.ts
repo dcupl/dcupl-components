@@ -30,10 +30,7 @@ export class SimpleFacetsComponent implements OnInit {
 
   private loadFacets() {
     if (this.list) {
-      console.time('facets');
       this.items = this.list.catalog.fn.facets({ attribute: 'articleType' });
-      console.timeEnd('facets');
-      console.log(this.items);
     }
   }
 

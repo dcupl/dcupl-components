@@ -42,7 +42,10 @@ export class SimpleTableComponent implements OnInit {
   }
 
   public reset() {
-    this.list.catalog.query.reset();
+    // Reset query - skip processing to avoid unnecessary updates
+    this.list.catalog.query.reset({ skipProcessing: true });
+    // Apply the count option so we don't have to render 44k items
+    this.list.catalog.query.applyOptions({ count: 10 });
   }
 
   private loadData() {
@@ -51,7 +54,7 @@ export class SimpleTableComponent implements OnInit {
     this.cdRef.detectChanges();
 
     // Log current state
-    console.groupCollapsed('Combined Logs');
+    console.groupCollapsed('Simple Table Component');
     console.log(this.list.catalog.query.get());
     console.log(this.data);
     console.log(this.metadata);
