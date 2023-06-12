@@ -19,12 +19,25 @@
         <div class="prose">
           <h3>Simple Facets</h3>
           <p>
-            The following component calculates and lists facets. When clicking an item the
-            query will be applied.
+            The following component calculates and lists facets. When clicking
+            an item the query will be applied.
           </p>
         </div>
         <div class="py-3 w-80">
           <app-simple-facets [list]="stylesList"></app-simple-facets>
+        </div>
+      </div>
+
+      <div class="py-8">
+        <div class="prose">
+          <h3>Range Slider</h3>
+          <p>
+            The following component applies a numerical query to the "year"
+            attribute of the table.
+          </p>
+        </div>
+        <div class="py-3 w-80">
+          <app-range-slider [list]="stylesList"></app-range-slider>
         </div>
       </div>
     </div>

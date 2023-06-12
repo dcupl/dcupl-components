@@ -30,7 +30,10 @@ export class SimpleTableComponent implements OnInit {
 
   private init() {
     if (this.list) {
-      this.list.catalog.query.applyOptions({ count: 10 });
+      this.list.catalog.query.applyOptions({
+        count: 10,
+        sort: { order: ['ASC'], attributes: ['year'] },
+      });
       this.loadData();
 
       this.list.on((msg) => {
