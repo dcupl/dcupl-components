@@ -9,6 +9,7 @@ import { SimpleTableComponent } from './components/simple-table/simple-table.com
 import { SimpleFacetsComponent } from './components/simple-facets/simple-facets.component';
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 import { SuggestionButtonsComponent } from './components/suggestion-buttons/suggestion-buttons.component';
+import { SuggestionMultiselectComponent } from './components/suggestion-multiselect/suggestion-multiselect.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SuggestionButtonsComponent } from './components/suggestion-buttons/sugg
     SimpleTableComponent,
     SimpleFacetsComponent,
     RangeSliderComponent,
-    SuggestionButtonsComponent
+    SuggestionButtonsComponent,
+    SuggestionMultiselectComponent
   ],
   imports: [
     BrowserModule,

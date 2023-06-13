@@ -1,0 +1,41 @@
+<div
+  class="w-full max-h-60 overflow-scroll p-3 border border-gray-200 rounded-md"
+>
+  <fieldset>
+    <input
+      type="text"
+      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      placeholder="e.g.: Gold, Blue, ..."
+      (keyup)="calculateSuggestions(searchInput.value)"
+      #searchInput
+    />
+    <legend class="text-base font-semibold leading-6 text-gray-900">
+      Article Types ({{ suggestions.length }})
+    </legend>
+    <div
+      class="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200"
+    >
+      <div
+        class="relative flex items-start py-4"
+        *ngFor="let item of suggestions"
+      >
+        <div class="min-w-0 flex-1 text-sm leading-6">
+          <label for="person-1" class="select-none font-medium text-gray-900">
+            <span>
+              {{ item.value }}
+            </span>
+            <span>({{ item.keys.length }})</span>
+          </label>
+        </div>
+        <div class="ml-3 flex h-6 items-center">
+          <input
+            type="checkbox"
+            [checked]="isValueSelected(item.value)"
+            (change)="toggle(item.value)"
+            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

@@ -1,5 +1,5 @@
-<div class="w-full h-full">
-  <div class="flex h-full w-full p-8" *ngIf="stylesList">
+<div class="w-full h-screen">
+  <div class="flex h-full w-full p-8 overflow-hidden" *ngIf="stylesList">
     <div class="flex flex-col h-full w-full overflow-y-scroll">
       <div class="py-8">
         <div class="prose">
@@ -50,6 +50,20 @@
         </div>
         <div class="py-3 w-80">
           <app-suggestion-buttons [list]="stylesList"></app-suggestion-buttons>
+        </div>
+      </div>
+
+      <div class="py-8">
+        <div class="prose">
+          <h3>Suggestion Multiselect</h3>
+          <p>
+            The following component gets suggestions for the "style" attribute
+          </p>
+        </div>
+        <div class="py-3 w-80">
+          <app-suggestion-multiselect
+            [list]="stylesList"
+          ></app-suggestion-multiselect>
         </div>
       </div>
     </div>
