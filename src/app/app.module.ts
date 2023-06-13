@@ -8,6 +8,7 @@ import { ComponentsOverviewComponent } from './pages/components-overview/compone
 import { SimpleTableComponent } from './components/simple-table/simple-table.component';
 import { SimpleFacetsComponent } from './components/simple-facets/simple-facets.component';
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
+import { SuggestionButtonsComponent } from './components/suggestion-buttons/suggestion-buttons.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RangeSliderComponent } from './components/range-slider/range-slider.com
     ComponentsOverviewComponent,
     SimpleTableComponent,
     SimpleFacetsComponent,
-    RangeSliderComponent
+    RangeSliderComponent,
+    SuggestionButtonsComponent
   ],
   imports: [
     BrowserModule,
