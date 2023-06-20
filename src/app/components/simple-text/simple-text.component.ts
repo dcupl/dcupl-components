@@ -14,7 +14,7 @@ export class SimpleTextComponent {
     if (!queryValue) {
       this.list?.catalog.query.remove({ groupKey: 'productDisplayName' });
     } else {
-      const escapedQueryValue = escapeRegExp(queryValue);
+      const escapedQueryValue = escapeRegExp(queryValue.toLowerCase());
 
       if (this.list) {
         this.list.catalog.query.apply(
@@ -22,6 +22,9 @@ export class SimpleTextComponent {
             attribute: 'productDisplayName',
             operator: 'find',
             value: `/${escapedQueryValue}/`,
+            options: {
+              transform: ['lowercase']
+            }
           },
           { mode: 'set' }
         );
