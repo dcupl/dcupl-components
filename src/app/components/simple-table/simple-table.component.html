@@ -1,4 +1,4 @@
-<div class="px-4 sm:px-6 lg:px-8">
+<div class="lg:px-8" id="results">
   <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
       <h1 class="text-base font-semibold leading-6 text-gray-900">
@@ -22,76 +22,95 @@
       </button>
     </div>
   </div>
-  <div class="mt-8 flow-root">
-    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-        <div
-          class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg"
-        >
-          <table class="min-w-full table-fixed divide-y divide-gray-300">
-            <thead class="bg-gray-50">
-              <tr>
-                <th
-                  scope="col"
-                  class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                >
-                  Key
-                </th>
-                <th
-                  scope="col"
-                  class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                >
-                  Name
-                </th>
-                <th
-                  scope="col"
-                  class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                >
-                  Type
-                </th>
-                <th
-                  scope="col"
-                  class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                >
-                  Color
-                </th>
-                <th
-                  scope="col"
-                  class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                >
-                  Year
-                </th>
-                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                  <span class="sr-only">Edit</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 bg-white">
-              <tr *ngFor="let row of data">
-                <td
-                  class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
-                >
-                  {{ row.key }}
-                </td>
-                <td
-                  class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 truncate"
-                >
-                  {{ row.productDisplayName }}
-                </td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ row.articleType }}
-                </td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ row.baseColour }}
-                </td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ row.year }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="-mx-4 mt-8 ring-1 ring-gray-100 sm:mx-0 sm:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-100 border border-gray-100">
+      <thead class="bg-gray-50">
+        <tr>
+          <th
+            scope="col"
+            class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+          >
+            Product (key)
+          </th>
+          <!-- <th
+            scope="col"
+            class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+          >
+            Name
+          </th> -->
+          <th
+            scope="col"
+            class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+          >
+            Type
+          </th>
+          <th
+            scope="col"
+            class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+          >
+            Color
+          </th>
+          <th
+            scope="col"
+            class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+          >
+            Year
+          </th>
+          <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+            <span class="sr-only">Edit</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 bg-white">
+        <tr *ngFor="let row of data">
+          <td
+            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
+          >
+            ({{ row.key }})
+            <dl class="font-normal">
+              <dt class="sr-only">Name</dt>
+              <dd class="mt-1 truncate text-gray-700">
+                {{ row.productDisplayName }}
+              </dd>
+              <dt class="sr-only lg:hidden">Type</dt>
+              <dd class="mt-1 truncate text-gray-500 lg:hidden">
+                {{ row.articleType }}
+              </dd>
+              <dt class="sr-only lg:hidden">Color</dt>
+              <dd class="mt-1 truncate text-gray-500 lg:hidden">
+                {{ row.baseColour }}
+              </dd>
+              <dt class="sr-only lg:hidden">Year</dt>
+              <dd class="mt-1 truncate text-gray-500 lg:hidden">
+                {{ row.year }}
+              </dd>
+            </dl>
+          </td>
+          <!-- <td
+            class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500 truncate"
+          >
+            {{ row.productDisplayName }}
+          </td> -->
+          <td
+            class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+          >
+            {{ row.articleType }}
+          </td>
+          <td
+            class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+          >
+            {{ row.baseColour }}
+          </td>
+          <td
+            class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+          >
+            {{ row.year }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
+<a href="#results" class="lg:hidden fixed inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg top-5 right-5">
+  Results:<span class="ml-2 text-xs" *ngIf="metadata">{{ metadata.currentSize }} / {{ metadata.initialSize }}</span>
+</a>
