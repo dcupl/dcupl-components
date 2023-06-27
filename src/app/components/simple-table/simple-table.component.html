@@ -32,12 +32,6 @@
           >
             Product (key)
           </th>
-          <!-- <th
-            scope="col"
-            class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-          >
-            Name
-          </th> -->
           <th
             scope="col"
             class="hidden lg:table-cell px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
@@ -64,33 +58,28 @@
       <tbody class="divide-y divide-gray-200 bg-white">
         <tr *ngFor="let row of data">
           <td
-            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
+            class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
           >
-            ({{ row.key }})
+            {{ row.productDisplayName }}
             <dl class="font-normal">
-              <dt class="sr-only">Name</dt>
+              <dt class="sr-only">Key</dt>
               <dd class="mt-1 truncate text-gray-700">
-                {{ row.productDisplayName }}
+                ({{ row.key }})
               </dd>
-              <dt class="sr-only lg:hidden">Type</dt>
+              <dt class="lg:hidden">Type</dt>
               <dd class="mt-1 truncate text-gray-500 lg:hidden">
                 {{ row.articleType }}
               </dd>
-              <dt class="sr-only lg:hidden">Color</dt>
+              <dt class="lg:hidden">Color</dt>
               <dd class="mt-1 truncate text-gray-500 lg:hidden">
                 {{ row.baseColour }}
               </dd>
-              <dt class="sr-only lg:hidden">Year</dt>
+              <dt class="lg:hidden">Year</dt>
               <dd class="mt-1 truncate text-gray-500 lg:hidden">
                 {{ row.year }}
               </dd>
             </dl>
           </td>
-          <!-- <td
-            class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500 truncate"
-          >
-            {{ row.productDisplayName }}
-          </td> -->
           <td
             class="hidden lg:table-cell whitespace-nowrap px-3 py-4 text-sm text-gray-500"
           >
