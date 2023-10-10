@@ -10,6 +10,7 @@ import { SimpleFacetsComponent } from './components/simple-facets/simple-facets.
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 import { SuggestionButtonsComponent } from './components/suggestion-buttons/suggestion-buttons.component';
 import { SuggestionMultiselectComponent } from './components/suggestion-multiselect/suggestion-multiselect.component';
+import { CodeBlockComponent } from './components/code-block/code-block.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,11 @@ import { SuggestionMultiselectComponent } from './components/suggestion-multisel
     SimpleFacetsComponent,
     RangeSliderComponent,
     SuggestionButtonsComponent,
-    SuggestionMultiselectComponent
+    SuggestionMultiselectComponent,
+    CodeBlockComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,12 +1,15 @@
-<div class="w-full h-screen overflow-auto">
-  <div class="flex flex-col lg:flex-row w-full p-4 sm:p-8" *ngIf="stylesList">
-    <div class="flex flex-col w-full" id="top">
+<div class="w-full h-screen overflow-hidden">
+  <div
+    class="flex flex-col lg:flex-row w-full overflow-hidden h-full"
+    *ngIf="stylesList"
+  >
+    <div class="flex flex-col w-full h-full overflow-auto p-8" id="top">
       <div class="bg-white py-8">
         <div class="">
           <h2
             class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
           >
-            dcupl components
+            dcupl showcase
           </h2>
           <p class="mt-6 text-lg leading-8 text-gray-600">
             Curious to see dcupl in action with large datasets? Dive into our
@@ -91,19 +94,55 @@
         </div>
       </div>
     </div>
-    <div class="relative my-10 lg:hidden">
-      <div class="absolute inset-0 flex items-center" aria-hidden="true">
-        <div class="w-full border-t border-gray-300"></div>
+
+    <div
+      class="flex w-full flex-col h-full overflow-auto bg-gray-200 p-8 shadow-inner border-gray-500 border-t border-dashed"
+    >
+      <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+          <h1 class="text-base font-semibold leading-6 text-gray-900">
+            <span>Products</span>
+
+            <span class="ml-3 text-xs" *ngIf="metadata"
+              >({{ metadata.currentSize }} / {{ metadata.initialSize }})</span
+            >
+          </h1>
+          <p class="mt-2 text-sm text-gray-700">
+            Make use of the filters below to narrow down the results displayed
+            in the table. The entire querying process happens right within the
+            browser, without the need for any backend services.
+          </p>
+        </div>
+        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none space-y-2">
+          <button
+            type="button"
+            class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            (click)="reset()"
+          >
+            Reset Queries
+          </button>
+          <button
+            type="button"
+            class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            (click)="toggleView()"
+          >
+            <ng-container *ngIf="viewMode === 'component'">
+              Show Code
+            </ng-container>
+            <ng-container *ngIf="viewMode === 'code'">Show Table</ng-container>
+          </button>
+        </div>
       </div>
-      <div class="relative flex justify-center">
-        <span class="bg-white px-3 text-base font-semibold text-gray-300">Result set</span>
+
+      <div>
+        <app-simple-table
+          [list]="stylesList"
+          *ngIf="viewMode === 'component'"
+        ></app-simple-table>
       </div>
-    </div>
-    <div class="flex w-full pb-8">
-      <app-simple-table [list]="stylesList"></app-simple-table>
+      <div class="mt-8" *ngIf="viewMode === 'code'">
+        <app-code-block [code]="metadata?.appliedQuery | json"></app-code-block>
+      </div>
     </div>
   </div>
 </div>
-<a href="#top" class="lg:hidden fixed inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg bottom-5 right-5">
-  <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg>
-</a>

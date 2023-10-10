@@ -31,8 +31,8 @@ export class SimpleTableComponent implements OnInit {
   private init() {
     if (this.list) {
       this.list.catalog.query.applyOptions({
-        count: 10,
-        sort: { order: ['ASC'], attributes: ['year'] },
+        count: 5,
+        // sort: { order: ['ASC'], attributes: ['year'] },
       });
       this.loadData();
 
@@ -42,13 +42,6 @@ export class SimpleTableComponent implements OnInit {
         }
       });
     }
-  }
-
-  public reset() {
-    // Reset query - skip processing to avoid unnecessary updates
-    this.list.catalog.query.reset({ skipProcessing: true });
-    // Apply the count option so we don't have to render 44k items
-    this.list.catalog.query.applyOptions({ count: 10 });
   }
 
   private loadData() {
@@ -64,5 +57,5 @@ export class SimpleTableComponent implements OnInit {
     console.groupEnd();
   }
 
-  private log() {}
+  public showQuery() {}
 }

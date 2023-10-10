@@ -16,7 +16,7 @@ export class RangeSliderComponent {
     this.activeYear = parseInt(queryValue as string, 10);
 
     if (!queryValue) {
-      this.list?.catalog.query.remove({ groupKey: 'productDisplayName' });
+      this.list?.catalog.query.remove({ groupKey: 'year' });
     } else {
       if (this.list) {
         this.list.catalog.query.apply(
