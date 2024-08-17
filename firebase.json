@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/dcupl-ng-components",
+    "public": "dist/dcupl-ng-components/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
