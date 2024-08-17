@@ -68,6 +68,7 @@ export class SuggestionMultiselectComponent {
         max: 10,
         transform: ['lowercase', 'removeWhitespace'],
         relevantData: 'all',
+        calculateResultKeys: true,
       }) || [];
   }
 

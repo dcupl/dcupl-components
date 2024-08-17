@@ -45,6 +45,7 @@ export class SuggestionButtonsComponent {
         value: `/${value}/`,
         max: 10,
         transform: ['lowercase', 'removeWhitespace'],
+        calculateResultKeys: true
       }) || [];
   }
 
