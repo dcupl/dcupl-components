@@ -31,6 +31,7 @@ export class ComponentsOverviewComponent implements OnInit {
   }
 
   private async init() {
+    console.time('init dcupl');
     const dcupl = new Dcupl({ config: { projectId: 'amNlybMblzqF2qcixBVT' } });
 
     // create your loader, add the loader to your core and fetch the config
@@ -47,6 +48,7 @@ export class ComponentsOverviewComponent implements OnInit {
     // dcupl.on((msg) => console.log(msg));
 
     await dcupl.init();
+    console.timeEnd('init dcupl');
 
     /**
      * There is a model called "Styles" available containing 44k items
@@ -68,7 +70,7 @@ export class ComponentsOverviewComponent implements OnInit {
     // Reset query - skip processing to avoid unnecessary updates
     this.stylesList.catalog.query.reset({ skipProcessing: true });
     // Apply the count option so we don't have to render 44k items
-    this.stylesList.catalog.query.applyOptions({ count: 5 });
+    this.stylesList.catalog.query.applyOptions({ count: 10 });
   }
 
   public toggleView() {
