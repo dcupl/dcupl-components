@@ -17,6 +17,7 @@ export class SimpleTextComponent {
       const escapedQueryValue = escapeRegExp(queryValue.toLowerCase());
 
       if (this.list) {
+        console.time('apply query');
         this.list.catalog.query.apply(
           {
             attribute: 'productDisplayName',
@@ -28,6 +29,7 @@ export class SimpleTextComponent {
           },
           { mode: 'set' }
         );
+        console.timeEnd('apply query');
       }
     }
   }
