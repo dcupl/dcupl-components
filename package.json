@@ -21,6 +21,8 @@
     "@dcupl/common": "1.8.3",
     "@dcupl/core": "1.8.3",
     "@dcupl/loader": "1.8.3",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.3"
@@ -30,6 +32,7 @@
     "@angular/cli": "~18.2.0",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.4",
+    "autoprefixer": "^10.4.20",
     "firebase-tools": "^9.1.0",
     "jasmine-core": "~5.1.2",
     "karma": "~6.4.2",
@@ -37,6 +40,8 @@
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
     "typescript": "~5.5.4"
   }
 }
