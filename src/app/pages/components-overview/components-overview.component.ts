@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListMetadata } from '@dcupl/common';
 import { Dcupl, DcuplList } from '@dcupl/core';
 import { DcuplAppLoader } from '@dcupl/loader';
+import { DcuplConnect } from '@dcupl/connect';
 
 export type Style = {
   key: string;
@@ -33,6 +34,12 @@ export class ComponentsOverviewComponent implements OnInit {
   private async init() {
     console.time('init dcupl');
     const dcupl = new Dcupl({ config: { projectId: 'amNlybMblzqF2qcixBVT' } });
+
+    const connectClient = new DcuplConnect({
+      dcuplInstance: dcupl,
+    });
+
+    await connectClient.init();
 
     // create your loader, add the loader to your core and fetch the config
     const loader = new DcuplAppLoader();
